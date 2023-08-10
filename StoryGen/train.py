@@ -210,11 +210,11 @@ def train(
         eps=adam_epsilon,
     )
 
-    train_dataset = SimpleDataset(root="./data/")
-    val_dataset = SimpleDataset(root="./data/")
+    # train_dataset = SimpleDataset(root="./data/")
+    # val_dataset = SimpleDataset(root="./data/")
     # Actually, you should use StorySalon Dataset to train the StoryGen model.
-    # train_dataset = StorySalonDataset(root="./StorySalon/", dataset_name='train')
-    # val_dataset = StorySalonDataset(root="./StorySalon/", dataset_name='test')
+    train_dataset = StorySalonDataset(root="./StorySalon/", dataset_name='train')
+    val_dataset = StorySalonDataset(root="./StorySalon/", dataset_name='test')
     
     print(train_dataset.__len__())
     print(val_dataset.__len__())
