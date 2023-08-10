@@ -104,7 +104,6 @@ dependencies:
     - datasets==2.6.1
     - debugpy==1.6.7
     - decorator==4.4.2
-    - detectron2==0.6+cu111
     - diffusers==0.13.1
     - dill==0.3.5.1
     - easydict==1.10
@@ -131,7 +130,7 @@ dependencies:
     - h11==0.14.0
     - httpcore==0.16.3
     - httpx==0.23.3
-    - huggingface-hub==0.14.1
+    - huggingface-hub==0.13.4
     - hydra-core==1.2.0
     - image-reward==1.2
     - imageio==2.22.1
@@ -247,7 +246,6 @@ dependencies:
     - toml==0.10.2
     - toolz==0.12.0
     - torch==1.13.1
-    - torchaudio==0.13.1+cu116
     - torchmetrics==0.10.0
     - torchstat==0.0.7
     - tornado==6.3.1
