@@ -11,11 +11,11 @@ from numpy import array, zeros, argmin, inf, equal, ndim
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 Punctmodel = PunctuationModel()
-model, preprocess = clip.load("./ViT-B-16.pt", device=device)
+model, preprocess = clip.load("ViT-B/16", device=device)
 reader = easyocr.Reader(['en'])
 
-image_path = 'image/'
-txt_path = 'img2txt/'
+image_path = 'StorySalon/image/'
+txt_path = 'StorySalon/img2txt/'
 
 fns = lambda s: sum(((s,int(n))for s,n in re.findall('(\D+)(\d+)','a%s0'%s)),())
 
