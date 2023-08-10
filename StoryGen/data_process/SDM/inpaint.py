@@ -30,8 +30,8 @@ def make_batch(image, mask, device):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--indir", default='../../StorySalon/', type=str)
-    parser.add_argument("--outdir", default='../../StorySalon/image_inpainted', type=str)
+    parser.add_argument("--indir", default='StorySalon/', type=str)
+    parser.add_argument("--outdir", default='StorySalon/image_inpainted', type=str)
     parser.add_argument("--steps", type=int, default=25)
     opt = parser.parse_args()
 
@@ -62,9 +62,9 @@ if __name__ == "__main__":
     outpath_list = [x.replace("image", "image_inpainted") for x in image_list]
     print(f"Found {len(mask_list)} inputs.")
 
-    config = OmegaConf.load("models/ldm/inpainting_big/config.yaml")
+    config = OmegaConf.load("/content/StoryGen/data_process/SDM/models/ldm/inpainting_big/config.yaml")
     model = instantiate_from_config(config.model)
-    model.load_state_dict(torch.load("models/ldm/inpainting_big/last.ckpt")["state_dict"], strict=False)
+    model.load_state_dict(torch.load("/content/StoryGen/data_process/SDM/models/ldm/inpainting_big/last.ckpt")["state_dict"], strict=False)
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = model.to(device)
