@@ -31,7 +31,8 @@ def make_batch(image, mask, device):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--indir", default='StorySalon/', type=str)
-    parser.add_argument("--outdir", default='StorySalon/image_inpainted', type=str)
+    #parser.add_argument("--outdir", default='StorySalon/image_inpainted', type=str)
+    parser.add_argument("--outdir", default='/content/drive/MyDrive/image_inpainted', type=str)
     parser.add_argument("--steps", type=int, default=25)
     opt = parser.parse_args()
 
@@ -59,7 +60,8 @@ if __name__ == "__main__":
         for mask in masks:
             mask_list.append(os.path.join(video, mask))
 
-    outpath_list = [x.replace("image", "image_inpainted") for x in image_list]
+    #outpath_list = [x.replace("image", "image_inpainted") for x in image_list]
+    outpath_list = [x.replace("StorySalon/image", "/content/drive/MyDrive/image_inpainted") for x in image_list]
     print(f"Found {len(mask_list)} inputs.")
 
     config = OmegaConf.load("/content/StoryGen/data_process/SDM/models/ldm/inpainting_big/config.yaml")
